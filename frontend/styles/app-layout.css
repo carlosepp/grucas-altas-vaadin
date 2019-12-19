@@ -1,0 +1,5 @@
+:host([primary-section="navbar"]) #navbarTop::before{
+    background: url(img/01.jpg);
+    background-size: cover;
+    background-position: bottom;
+}

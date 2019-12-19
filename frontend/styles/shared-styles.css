@@ -1,0 +1,165 @@
+.login-information {
+    min-width: 300px;
+    flex: 0;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+.login-information:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(img/01.jpg);
+    background-size: cover;
+    color: white;
+    background-position: center;
+    transition: background-size 2s ease-in;
+    -moz-transition: background-size 2s ease-in;
+    -ms-transition: background-size 2s ease-in;
+    -o-transition: background-size 2s ease-in;
+    -webkit-transition: background-size 2s ease-in;
+    -webkit-animation: scale 20s infinite; /* Safari, Chrome and Opera > 12.1 */
+           -moz-animation: scale 20s infinite; /* Firefox < 16 */
+            -ms-animation: scale 20s infinite; /* Internet Explorer */
+             -o-animation: scale 20s infinite; /* Opera < 12.1 */
+                animation: scale 20s infinite;
+    z-index: -1;
+}
+
+.login-information h1,
+.login-information h2 {
+    color: white;
+}
+
+.login-information img {
+    max-width: 100%;
+}
+
+
+@keyframes scale {
+    0% { transform: scale(1); }
+    50%   { transform: scale(1.15); }
+    100%   { transform: scale(1); }
+}
+/* Stack login-screen vertically on narrow screen */
+@media (max-width: 800px) {
+
+    .login-screen {
+        flex-direction: column;
+    }
+
+    .login-information {
+        display: block;
+    }
+}
+
+body {
+
+    /* Used by the menu and form overlays */
+    --overlay-box-shadow: 0 0 3px 2px var(--lumo-contrast-10pct);
+}
+
+.menu-header {
+    padding: 11px 16px;
+    padding-left: 32px;
+    font-size: var(--lumo-font-size-l);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-link {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 37px;
+    transition: transform 300ms;
+    
+    font-family: var(--lumo-font-family);
+    font-size: var(--lumo-font-size-m);
+    font-weight: 500;
+    color: var(--lumo-secondary-text-color);
+}
+
+.menu-link:hover {
+    text-decoration: none;
+}
+
+.menu-link span {
+    padding-left: 5px;
+}
+
+.menu-button {
+    padding: 10px 42px;
+    color: var(--lumo-secondary-text-color);
+}
+
+.product-form {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: auto;
+    background: var(--lumo-base-color);
+    box-shadow: var(--overlay-box-shadow);
+}
+
+.product-form-content {
+    margin-top: var(--_vaadin-app-layout-navbar-offset-size);
+}
+
+/* 
+ * Special rules for narrow screens (responsive design rules)
+ */
+@media (max-width: 800px), (max-height: 600px) {
+
+	/*
+	 * Make menu toggle visible, and smaller
+	 */
+    .menu-toggle {
+        display: block;
+        height: var(--lumo-button-size);
+        width: var(--lumo-button-size);
+    }
+    
+    .menu-header {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .product-form {
+        width: 100%;
+
+        /* Prevent text-fields from overflowing on narrow screens */
+        --vaadin-text-field-default-width: 6em;
+    }
+}
+
+/* Color codes for the availability statuses of the products */
+.Available {
+    color: #2dd085;
+}
+
+.Coming {
+    color: #ffc66e;
+}
+
+.Discontinued {
+    color: #f54993;
+}
+
+html {
+    --lumo-primary-color: #ff9400;
+    --lumo-primary-color-50pct: #fdc981;
+    --lumo-border-radius: 20px;
+}
+
+
+.offline .content .title {
+    background-image: url("img/logo.png") !important;
+}
